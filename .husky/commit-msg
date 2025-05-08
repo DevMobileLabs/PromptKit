@@ -1,4 +1,28 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npx --no -- commitlint --edit $1 
+echo "
+📝 Commit message guideline:
+---------------------------------------
+<type>(scope?): <short summary>
+
+Types:
+  feat:     A new feature
+  fix:      A bug fix
+  docs:     Documentation only changes
+  style:    Changes that do not affect code meaning
+  refactor: Code change that neither fixes bug nor adds feature
+  perf:     Performance improvements
+  test:     Adding or fixing tests
+  build:    Changes to build system or dependencies
+  ci:       CI configuration changes
+  chore:    Maintenance tasks
+  revert:   Revert to a previous commit
+
+Example:
+  feat(auth): add login button
+  fix(api): handle null response from server
+---------------------------------------
+"
+
+npx --no -- commitlint --edit "$1"

@@ -1,4 +1,10 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
+# Check branch name
+echo "🔍 Checking branch name..."
+npm run check-branch || exit 1
+
+# Run lint-staged
+echo "🔍 Running lint-staged..."
 npx lint-staged
