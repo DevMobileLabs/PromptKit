@@ -1,20 +1,26 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { NavigationContainer } from '@react-navigation/native';
+import { StatusBar } from 'expo-status-bar';
+import React from 'react';
+import { AppNavigator, navigationService, useNavigationTheme } from './app/navigation';
+import { withProviders } from './app/providers';
 
-export default function App() {
+const App = () => {
+  const theme = useNavigationTheme();
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+    <React.Fragment>
+      <NavigationContainer
+        theme={theme}
+        ref={navigationService.ref}
+        onStateChange={navigationService.onStateChange}
+        onReady={() => {
+          navigationService.onReady();
+        }}
+      >
+        <AppNavigator />
+      </NavigationContainer>
       <StatusBar style="auto" />
-    </View>
+    </React.Fragment>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+export default withProviders(App);
