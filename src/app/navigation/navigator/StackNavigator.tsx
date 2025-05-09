@@ -13,7 +13,7 @@ const Tab = createBottomTabNavigator<RootStackParamList>();
 
 export const MainStackNavigator: React.ComponentType = () => {
   return (
-    <Stack.Navigator screenOptions={screenDefaultOptions} initialRouteName={RouteName.MAIN_TAB}>
+    <Stack.Navigator screenOptions={screenDefaultOptions} initialRouteName={RouteName.AUTH_LOGIN}>
       {/* Bottom Tab */}
       <Stack.Screen name={RouteName.MAIN_TAB} component={BottomTabNavigator} options={{ headerShown: false }} />
       {/* Main Screens */}

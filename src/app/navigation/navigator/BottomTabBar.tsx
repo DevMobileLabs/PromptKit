@@ -5,8 +5,9 @@ import React, { useCallback } from 'react';
 import { Image, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import { responsiveBorder, responsiveFont, responsiveHeight, responsiveWidth } from '@/app/theme';
 import { TAB_BAR_MENU } from '../config/navigationConfig';
+import { scaleWidth } from '@/app/theme';
+import { scaleHeight } from '@/app/theme';
 
 const BottomTabBar: React.FunctionComponent<BottomTabBarProps> = ({ state, descriptors, navigation }) => {
   const { buildHref } = useLinkBuilder();
@@ -70,28 +71,28 @@ const BottomTabBar: React.FunctionComponent<BottomTabBarProps> = ({ state, descr
 
 const styles = StyleSheet.create({
   container: {
-    maxHeight: responsiveHeight(82),
+    maxHeight: scaleHeight(82),
     backgroundColor: '#010101',
     borderTopColor: '#FFC115',
-    borderTopWidth: responsiveWidth(1),
-    borderTopLeftRadius: responsiveBorder(16),
-    borderTopRightRadius: responsiveBorder(16),
+    borderTopWidth: scaleWidth(1),
+    borderTopLeftRadius: scaleWidth(16),
+    borderTopRightRadius: scaleWidth(16),
   },
   wrapper: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     width: '100%',
-    paddingBlock: responsiveHeight(16),
-    paddingInline: responsiveWidth(20),
+    paddingBlock: scaleHeight(16),
+    paddingInline: scaleWidth(20),
   },
   itemContainer: {
     alignItems: 'center',
     justifyContent: 'center',
     height: '100%',
-    gap: responsiveHeight(6),
+    gap: scaleHeight(6),
   },
   icon: {
-    height: responsiveHeight(24),
+    height: scaleHeight(24),
     aspectRatio: 1,
     tintColor: '#999999',
   },
@@ -99,8 +100,8 @@ const styles = StyleSheet.create({
     tintColor: '#00A991',
   },
   text: {
-    fontSize: responsiveFont(12),
-    lineHeight: responsiveFont(15.6),
+    fontSize: scaleWidth(12),
+    lineHeight: scaleWidth(15.6),
     textAlign: 'center',
     color: '#999999',
   },
