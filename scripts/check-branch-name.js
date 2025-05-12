@@ -1,15 +1,14 @@
 #!/usr/bin/env node
 
-const { execSync } = require("child_process");
+const { execSync } = require('child_process');
 
-const BRANCH_NAME_REGEX =
-  /^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)\/[a-z0-9-]+$/;
+const BRANCH_NAME_REGEX = /^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)\/[a-z0-9-]+$/;
 
 function getCurrentBranch() {
   try {
-    return execSync("git rev-parse --abbrev-ref HEAD").toString().trim();
+    return execSync('git rev-parse --abbrev-ref HEAD').toString().trim();
   } catch (error) {
-    console.error("Error getting current branch:", error);
+    console.error('Error getting current branch:', error);
     process.exit(1);
   }
 }
@@ -22,7 +21,7 @@ function main() {
   const currentBranch = getCurrentBranch();
 
   // Skip check for main/master branch
-  if (currentBranch === "main" || currentBranch === "master") {
+  if (currentBranch === 'main' || currentBranch === 'master') {
     process.exit(0);
   }
 

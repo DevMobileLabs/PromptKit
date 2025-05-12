@@ -1,23 +1,23 @@
-import type { UserConfig } from "@commitlint/types";
+import type { UserConfig } from '@commitlint/types';
 
 const Configuration: UserConfig = {
-  extends: ["@commitlint/config-conventional"],
+  extends: ['@commitlint/config-conventional'],
   rules: {
-    "type-enum": [
+    'type-enum': [
       2,
-      "always",
+      'always',
       [
-        "feat", // New feature
-        "fix", // Bug fix
-        "docs", // Documentation changes
-        "style", // Changes that do not affect the meaning of the code
-        "refactor", // Code changes that neither fix a bug nor add a feature
-        "perf", // Performance improvement
-        "test", // Adding missing tests or correcting existing tests
-        "build", // Changes that affect the build system or external dependencies
-        "ci", // Changes to CI configuration files and scripts
-        "chore", // Other changes that don't modify src or test files
-        "revert", // Reverts a previous commit
+        'feat', // New feature
+        'fix', // Bug fix
+        'docs', // Documentation changes
+        'style', // Changes that do not affect the meaning of the code
+        'refactor', // Code changes that neither fix a bug nor add a feature
+        'perf', // Performance improvement
+        'test', // Adding missing tests or correcting existing tests
+        'build', // Changes that affect the build system or external dependencies
+        'ci', // Changes to CI configuration files and scripts
+        'chore', // Other changes that don't modify src or test files
+        'revert', // Reverts a previous commit
       ],
     ],
   },
