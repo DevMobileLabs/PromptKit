@@ -241,21 +241,203 @@ export const colorVariables = {
 
 // Theme colors
 const LIGHT_COLORS = {
+  // general
+  stroke: {
+    general_brand: colorVariables.brand_500,
+    general_grey01: colorVariables.grey_50,
+    general_grey02: colorVariables.grey_100,
+    general_grey03: colorVariables.grey_800,
+    status_success: colorVariables.alert_success_500,
+    status_warning: colorVariables.alert_warning_500,
+    status_error: colorVariables.alert_error_500,
+  },
+
   // Background Colors
   background: {
     primary: colorVariables.neutral_100,
     secondary: colorVariables.neutral_0,
   },
-  text: colorVariables.neutral_900,
+  text: {
+    general_strong: colorVariables.grey_900,
+    general_medium: colorVariables.grey_500,
+    general_light: colorVariables.grey_300,
+    general_white: colorVariables.grey_50,
+    general_brand: colorVariables.brand_500,
+    general_success: colorVariables.alert_success_700,
+    general_warning: colorVariables.alert_warning_700,
+    general_error: colorVariables.alert_error_700,
+
+    // modal
+    modal_title: colorVariables.grey_900,
+    modal_subtitle: colorVariables.grey_500,
+
+    // navigation
+    navigation_active: colorVariables.brand_500,
+    navigation_inactive: colorVariables.grey_500,
+    navigation_title_top: colorVariables.grey_900,
+
+    // button
+    button_white: colorVariables.grey_0,
+    button_brand: colorVariables.brand_500,
+    button_brand_secondary: colorVariables.brand_300,
+    button_text_strong: colorVariables.grey_900,
+    button_text_medium: colorVariables.grey_500,
+    button_text_light: colorVariables.grey_300,
+
+    // card
+    card_white: colorVariables.grey_0,
+    card_black: colorVariables.grey_900,
+    card_grey: colorVariables.grey_500,
+
+    // popup
+    popup_white: colorVariables.grey_0,
+    popup_black: colorVariables.grey_900,
+    popup_grey: colorVariables.grey_500,
+  },
+
+  // surface
+  surface: {
+    general_bg: colorVariables.grey_black,
+    general_white: colorVariables.grey_0,
+    general_level02: colorVariables.grey_25,
+    general_level03: colorVariables.grey_50,
+    general_grey200: colorVariables.grey_200,
+    general_dark: colorVariables.grey_900,
+    general_brand: colorVariables.brand_500,
+    general_brand200: colorVariables.brand_200,
+    general_yellow: colorVariables.yellow_500,
+
+    // button
+    button_pri500: colorVariables.brand_500,
+    button_pri400: colorVariables.brand_400,
+    button_pri300: colorVariables.brand_300,
+    button_pri200: colorVariables.brand_200,
+    button_pri100: colorVariables.brand_100,
+    button_pri50: colorVariables.brand_50,
+    button_neu200: colorVariables.grey_200,
+    button_neu300: colorVariables.grey_300,
+    button_neu400: colorVariables.grey_400,
+    button_neu500: colorVariables.grey_500,
+    button_neu900: colorVariables.grey_900,
+
+    // card
+    card_brand01: colorVariables.brand_500,
+    card_brand02: colorVariables.alert_success_700,
+
+    tabs_brand: colorVariables.brand_500,
+    tabs_white: colorVariables.grey_0,
+  },
+
+  icons: {
+    general_white: colorVariables.grey_0,
+    general_black: colorVariables.grey_900,
+    general_grey01: colorVariables.grey_50,
+    general_grey02: colorVariables.grey_100,
+    general_brand: colorVariables.brand_500,
+    general_error: colorVariables.alert_error_700,
+    general_yellow: colorVariables.alert_warning_700,
+  },
 };
 
 const DARK_COLORS: ColorTypes = {
+  // general
+  stroke: {
+    general_brand: colorVariables.brand_500,
+    general_grey01: colorVariables.grey_50,
+    general_grey02: colorVariables.grey_100,
+    general_grey03: colorVariables.grey_800,
+    status_success: colorVariables.alert_success_500,
+    status_warning: colorVariables.alert_warning_500,
+    status_error: colorVariables.alert_error_500,
+  },
+
+  //
+
   // Background Colors
   background: {
     primary: colorVariables.neutral_900,
     secondary: colorVariables.neutral_800,
   },
-  text: colorVariables.neutral_0,
+  text: {
+    general_strong: colorVariables.grey_0,
+    general_medium: colorVariables.grey_50,
+    general_light: colorVariables.grey_100,
+    general_white: colorVariables.grey_0,
+    general_brand: colorVariables.brand_500,
+    general_success: colorVariables.alert_success_700,
+    general_warning: colorVariables.alert_warning_700,
+    general_error: colorVariables.alert_error_700,
+
+    // modal
+    modal_title: colorVariables.grey_0,
+    modal_subtitle: colorVariables.grey_50,
+
+    // navigation
+    navigation_active: colorVariables.brand_500,
+    navigation_inactive: colorVariables.grey_50,
+    navigation_title_top: colorVariables.grey_0,
+
+    // button
+    button_white: colorVariables.grey_0,
+    button_brand: colorVariables.brand_500,
+    button_brand_secondary: colorVariables.brand_300,
+    button_text_strong: colorVariables.grey_0,
+    button_text_medium: colorVariables.grey_50,
+    button_text_light: colorVariables.grey_100,
+
+    // card
+    card_white: colorVariables.grey_0,
+    card_black: colorVariables.grey_900,
+    card_grey: colorVariables.grey_500,
+
+    // popup
+    popup_white: colorVariables.grey_0,
+    popup_black: colorVariables.grey_900,
+    popup_grey: colorVariables.grey_500,
+  },
+
+  // surface
+  surface: {
+    general_bg: colorVariables.grey_black,
+    general_white: colorVariables.grey_0,
+    general_level02: colorVariables.grey_25,
+    general_level03: colorVariables.grey_50,
+    general_grey200: colorVariables.grey_200,
+    general_dark: colorVariables.grey_900,
+    general_brand: colorVariables.brand_500,
+    general_brand200: colorVariables.brand_200,
+    general_yellow: colorVariables.yellow_500,
+
+    // button
+    button_pri500: colorVariables.brand_500,
+    button_pri400: colorVariables.brand_400,
+    button_pri300: colorVariables.brand_300,
+    button_pri200: colorVariables.brand_200,
+    button_pri100: colorVariables.brand_100,
+    button_pri50: colorVariables.brand_50,
+    button_neu200: colorVariables.grey_200,
+    button_neu300: colorVariables.grey_300,
+    button_neu400: colorVariables.grey_400,
+    button_neu500: colorVariables.grey_500,
+    button_neu900: colorVariables.grey_900,
+
+    // card
+    card_brand01: colorVariables.brand_500,
+    card_brand02: colorVariables.alert_success_700,
+
+    tabs_brand: colorVariables.brand_500,
+    tabs_white: colorVariables.grey_0,
+  },
+
+  icons: {
+    general_white: colorVariables.grey_0,
+    general_black: colorVariables.grey_900,
+    general_grey01: colorVariables.grey_50,
+    general_grey02: colorVariables.grey_100,
+    general_brand: colorVariables.brand_500,
+    general_error: colorVariables.alert_error_700,
+    general_yellow: colorVariables.alert_warning_700,
+  },
 };
 
 export { DARK_COLORS, LIGHT_COLORS };
