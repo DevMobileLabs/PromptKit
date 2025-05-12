@@ -5,7 +5,8 @@
     "strictNullChecks": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "@assets/*": ["assets/*"]
     }
   },
   "include": [
@@ -26,6 +27,8 @@
     "jest.setup.ts",
     "commitlint.config.ts",
     "eslint.config.mjs",
-    "branchlint.config.ts"
+    "branchlint.config.ts",
+    "assets/**/*.ts",
+    "assets/**/*.tsx"
   ]
 }

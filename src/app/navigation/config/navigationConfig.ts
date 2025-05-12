@@ -2,9 +2,9 @@ import { DarkTheme, DefaultTheme, Theme } from '@react-navigation/native';
 import { NativeStackNavigationOptions } from '@react-navigation/native-stack';
 import { ImageSourcePropType, Platform } from 'react-native';
 
-import { icons } from '@/assets';
 import { systemTheme } from '@/shared/constants/appConst';
 import { useAppSelector } from '@/store';
+import { icons } from '@assets/icons';
 
 export const screenDefaultOptions = (): NativeStackNavigationOptions => ({
   headerShadowVisible: false,
