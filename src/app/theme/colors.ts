@@ -1,5 +1,6 @@
 export type ColorTypes = typeof LIGHT_COLORS;
 
+// global color tokens
 export const colorVariables = {
   /* frequently used */
   // grayscale
@@ -199,8 +200,46 @@ export const colorVariables = {
   rose_800: '#9F1239',
   rose_900: '#881337',
   rose_950: '#4C0519',
+
+  // grey
+  grey_black: '#0C0C0C',
+  grey_0: '#FFFFFF',
+  grey_25: '#F5F5F5',
+  grey_50: '#F3F3F4',
+  grey_100: '#DCDDDD',
+  grey_200: '#C6C6C7',
+  grey_300: '#B0B1B1',
+  grey_400: '#9A9B9C',
+  grey_500: '#868687',
+  grey_600: '#717273',
+  grey_800: '#4B4B4C',
+  grey_900: '#1C1C1D',
+
+  brand_50: '#E7F7F0',
+  brand_100: '#B6E8D2',
+  brand_200: '#86D6B5',
+  brand_300: '#53C49A',
+  brand_400: '#008082',
+  brand_500: '#009C6B',
+  brand_600: '#008657',
+  brand_700: '#007146',
+  brand_800: '#005836',
+  brand_900: '#004529',
+
+  alert_success_50: '#EEFAF5',
+  alert_success_500: '#12B76A',
+  alert_success_700: '#0E9254',
+
+  alert_warning_50: '#FDF8EA',
+  alert_warning_500: '#EAAA08',
+  alert_warning_700: '#C48F07',
+
+  alert_error_50: '#FEF2F2',
+  alert_error_500: '#EA4A40',
+  alert_error_700: '#BA3B33',
 };
 
+// Theme colors
 const LIGHT_COLORS = {
   // Background Colors
   background: {
