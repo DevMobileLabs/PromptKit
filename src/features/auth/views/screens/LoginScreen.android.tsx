@@ -20,7 +20,7 @@ const CreateAccountScreen = () => {
           <Text style={styles.emailButtonText}>Continue with Email/Phone</Text>
         </TouchableOpacity>
 
-        <Text style={styles.orText}>Or</Text>
+        <Text style={styles.orText}>Or Android</Text>
 
         {/* Continue with Apple Button */}
         <TouchableOpacity style={[styles.button, styles.socialButton]}>
@@ -70,7 +70,7 @@ const createStyles = (colors: ColorTypes) =>
       fontWeight: 'bold',
       marginBottom: 30,
       fontFamily: 'serif', // Example of using a serif font if available
-      color: colors.text, // Assuming a text color exists in your theme colors
+      color: colors.text.general_strong, // Assuming a text color exists in your theme colors
     },
     optionsContainer: {
       width: '100%',
@@ -113,7 +113,7 @@ const createStyles = (colors: ColorTypes) =>
     },
     socialButtonText: {
       fontSize: 16,
-      color: colors.text, // Use primary text color
+      color: colors.text.general_strong, // Use primary text color
       marginLeft: 10, // Space for icon
     },
     icon: {

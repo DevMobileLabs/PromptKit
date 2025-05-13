@@ -19,7 +19,7 @@ const appSplashEdgeToEdgeEnabled = true;
 
 const appImageAsset = {
   appIcon: './assets/app/icon.png',
-  appSplashImage: './assets/app/splash.png',
+  appSplashImage: './assets/app/splash-icon.png',
   appAdaptiveIconForegroundImage: './assets/app/adaptive-icon.png',
   appWebFavicon: './assets/app/favicon.png',
 };

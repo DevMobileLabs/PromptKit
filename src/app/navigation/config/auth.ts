@@ -1,4 +1,4 @@
-import { LoginScreen, SignUpScreen } from '@/features/auth';
+import { SignUpScreen, LoginScreen } from '@/features/auth';
 import RouteName from '../route';
 import { RouteConfig } from '../types';
 
