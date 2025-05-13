@@ -274,6 +274,19 @@ const LIGHT_COLORS = {
     underlineDisabledText: colorVariables.neutral_500,
   },
 
+  // Toggle Switch
+  toggleSwitch: {
+    toggle: colorVariables.neutral_0,
+    toggleBg: colorVariables.neutral_300,
+    toggleBgOn: colorVariables.emerald_700,
+    toggleDisabled: colorVariables.neutral_200,
+    toggleLabel: colorVariables.neutral_950,
+  },
+
+  toggleContained: {
+    bg: colorVariables.neutral_0,
+  },
+
   // general
   stroke: {
     general_brand: colorVariables.brand_500,
@@ -405,6 +418,19 @@ const DARK_COLORS: ColorTypes = {
     /// Underline
     underlineText: colorVariables.neutral_900,
     underlineDisabledText: colorVariables.neutral_500,
+  },
+
+  // Toggle Switch
+  toggleSwitch: {
+    toggle: colorVariables.neutral_0,
+    toggleBg: colorVariables.neutral_700,
+    toggleBgOn: colorVariables.emerald_800,
+    toggleDisabled: colorVariables.neutral_200,
+    toggleLabel: colorVariables.neutral_200,
+  },
+
+  toggleContained: {
+    bg: colorVariables.neutral_900,
   },
 
   // general
