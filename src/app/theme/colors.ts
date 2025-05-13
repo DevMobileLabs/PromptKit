@@ -326,6 +326,14 @@ const LIGHT_COLORS = {
     borderBoxDisabled: colorVariables.neutral_300,
   },
 
+  // OTP Input
+  otpInput: {
+    borderHighlight: colorVariables.emerald_600,
+    border: colorVariables.neutral_300,
+    backgroundColor: colorVariables.neutral_100,
+    backgroundHighlight: colorVariables.neutral_50,
+  },
+
   // general
   stroke: {
     general_brand: colorVariables.brand_500,
@@ -508,6 +516,14 @@ const DARK_COLORS: ColorTypes = {
 
     disabledLabel: colorVariables.neutral_600,
     borderBoxDisabled: colorVariables.neutral_600,
+  },
+
+  // OTP Input
+  otpInput: {
+    borderHighlight: colorVariables.emerald_600,
+    border: colorVariables.neutral_400,
+    backgroundColor: colorVariables.neutral_800,
+    backgroundHighlight: colorVariables.neutral_900,
   },
 
   // general
