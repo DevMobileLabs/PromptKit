@@ -241,6 +241,39 @@ export const colorVariables = {
 
 // Theme colors
 const LIGHT_COLORS = {
+  button: {
+    text: colorVariables.neutral_0,
+    /// Primary
+    primary: colorVariables.brand_500,
+    primaryPressed: colorVariables.emerald_800,
+    primaryBorder: colorVariables.emerald_800,
+    primaryText: colorVariables.neutral_0,
+    primaryDisabled: colorVariables.neutral_300,
+    primaryDisabledText: colorVariables.neutral_500,
+
+    /// Secondary
+    secondary: 'transparent',
+    secondaryPressed: colorVariables.neutral_100,
+    secondaryBorder: colorVariables.neutral_300,
+    secondaryText: colorVariables.neutral_900,
+    secondaryDisabled: colorVariables.neutral_0,
+    secondaryDisabledText: colorVariables.neutral_300,
+    secondaryDisabledBorder: colorVariables.neutral_300,
+
+    /// Destructive
+    destructive: colorVariables.neutral_0,
+    destructivePressed: colorVariables.neutral_100,
+    destructiveText: colorVariables.red_700,
+    destructiveBorder: colorVariables.neutral_300,
+    destructiveDisabled: colorVariables.neutral_0,
+    destructiveDisabledBorder: colorVariables.neutral_300,
+    destructiveDisabledText: colorVariables.red_300,
+
+    /// Underline
+    underlineText: colorVariables.neutral_900,
+    underlineDisabledText: colorVariables.neutral_500,
+  },
+
   // general
   stroke: {
     general_brand: colorVariables.brand_500,
@@ -340,6 +373,40 @@ const LIGHT_COLORS = {
 };
 
 const DARK_COLORS: ColorTypes = {
+  button: {
+    text: colorVariables.neutral_0,
+
+    /// Primary
+    primary: colorVariables.brand_500,
+    primaryPressed: colorVariables.emerald_800,
+    primaryBorder: colorVariables.emerald_800,
+    primaryText: colorVariables.neutral_950,
+    primaryDisabled: colorVariables.neutral_500,
+    primaryDisabledText: colorVariables.neutral_700,
+
+    /// Secondary
+    secondary: 'transparent',
+    secondaryPressed: colorVariables.neutral_700,
+    secondaryText: colorVariables.neutral_50,
+    secondaryBorder: colorVariables.neutral_600,
+    secondaryDisabled: 'transparent',
+    secondaryDisabledText: colorVariables.neutral_600,
+    secondaryDisabledBorder: colorVariables.neutral_600,
+
+    /// Destructive
+    destructive: colorVariables.neutral_0,
+    destructivePressed: colorVariables.neutral_700,
+    destructiveText: colorVariables.red_600,
+    destructiveBorder: colorVariables.neutral_600,
+    destructiveDisabledBorder: colorVariables.neutral_600,
+    destructiveDisabled: colorVariables.neutral_300,
+    destructiveDisabledText: colorVariables.neutral_500,
+
+    /// Underline
+    underlineText: colorVariables.neutral_900,
+    underlineDisabledText: colorVariables.neutral_500,
+  },
+
   // general
   stroke: {
     general_brand: colorVariables.brand_500,
