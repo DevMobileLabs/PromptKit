@@ -287,6 +287,35 @@ const LIGHT_COLORS = {
     bg: colorVariables.neutral_0,
   },
 
+  // Radio Button
+  radioButton: {
+    label: colorVariables.neutral_950,
+
+    circle: colorVariables.neutral_200,
+    circleSelected: colorVariables.emerald_400,
+    labelSelected: colorVariables.neutral_900,
+
+    /// base
+    baseBg: 'transparent',
+    baseBorder: 'transparent',
+
+    /// selected
+    selectedBg: 'transparent',
+    selectedBorder: 'transparent',
+
+    /// disabled
+    disabledBg: 'transparent',
+    disabledBorder: 'transparent',
+    disabledCircleOuter: colorVariables.neutral_200,
+    disabledText: colorVariables.neutral_300,
+
+    /// Outer circle
+    outerCircleSelected: colorVariables.neutral_900,
+    outerCircleUnselected: colorVariables.neutral_500,
+    /// Inner circle
+    innerCircleSelected: colorVariables.neutral_900,
+  },
+
   // general
   stroke: {
     general_brand: colorVariables.brand_500,
@@ -431,6 +460,33 @@ const DARK_COLORS: ColorTypes = {
 
   toggleContained: {
     bg: colorVariables.neutral_900,
+  },
+
+  // Radio Button
+  radioButton: {
+    label: colorVariables.neutral_50,
+
+    circle: colorVariables.neutral_50,
+    circleSelected: colorVariables.neutral_50,
+    labelSelected: colorVariables.neutral_0,
+    /// base
+    baseBg: 'transparent',
+    baseBorder: 'transparent',
+    /// selected
+    selectedBg: 'transparent',
+    selectedBorder: 'transparent',
+    /// disabled
+    disabledBg: 'transparent',
+    disabledCircleOuter: colorVariables.neutral_600,
+    disabledBorder: 'transparent',
+    disabledText: colorVariables.neutral_600,
+
+    /// Outer circle
+    outerCircleSelected: colorVariables.neutral_50,
+    outerCircleUnselected: colorVariables.neutral_500,
+
+    /// Inner circle
+    innerCircleSelected: colorVariables.neutral_50,
   },
 
   // general
