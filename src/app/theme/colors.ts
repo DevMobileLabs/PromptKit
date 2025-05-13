@@ -316,6 +316,16 @@ const LIGHT_COLORS = {
     innerCircleSelected: colorVariables.neutral_900,
   },
 
+  // Checkbox
+  checkbox: {
+    checkMark: colorVariables.neutral_50,
+    label: colorVariables.neutral_900,
+    disabledLabel: colorVariables.neutral_400,
+
+    borderBox: colorVariables.neutral_900,
+    borderBoxDisabled: colorVariables.neutral_300,
+  },
+
   // general
   stroke: {
     general_brand: colorVariables.brand_500,
@@ -487,6 +497,17 @@ const DARK_COLORS: ColorTypes = {
 
     /// Inner circle
     innerCircleSelected: colorVariables.neutral_50,
+  },
+
+  // Checkbox
+  checkbox: {
+    checkMark: colorVariables.neutral_900,
+
+    label: colorVariables.neutral_50,
+    borderBox: colorVariables.neutral_50,
+
+    disabledLabel: colorVariables.neutral_600,
+    borderBoxDisabled: colorVariables.neutral_600,
   },
 
   // general
