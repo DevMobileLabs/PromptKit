@@ -1,4 +1,4 @@
-import FallbackError from '@/shared/components/errors/FallbackError';
+import { FallbackError } from '@/shared/components/errors';
 import React, { Component, ErrorInfo, ReactNode } from 'react';
 
 interface ErrorBoundaryProps {
