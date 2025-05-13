@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 export const fonts = {
   // font weight
   fontWeight100: '100', //thin
@@ -17,4 +18,11 @@ export const fonts = {
     large: 24,
     xl: 28,
   },
+};
+
+export const font_tokens = {
+  regular: 'Poppins-Regular',
+  medium: 'Poppins-Medium',
+  bold: 'Poppins-Bold',
+  semibold: 'Poppins-SemiBold',
 };

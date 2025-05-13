@@ -1,10 +1,4 @@
-/* eslint-disable @typescript-eslint/naming-convention */
-export const font_tokens = {
-  regular: 'Poppins-Regular',
-  medium: 'Poppins-Medium',
-  bold: 'Poppins-Bold',
-  semibold: 'Poppins-SemiBold',
-};
+import { font_tokens } from './font';
 
 export const typography = {
   // Heading
