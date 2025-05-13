@@ -385,6 +385,12 @@ const LIGHT_COLORS = {
     secondary: colorVariables.neutral_0,
   },
   text: {
+    primary: colorVariables.neutral_950,
+    secondary: colorVariables.neutral_600,
+    highlight: colorVariables.emerald_400,
+    link: colorVariables.blue_700,
+    danger: colorVariables.neutral_0,
+
     general_strong: colorVariables.grey_900,
     general_medium: colorVariables.grey_500,
     general_light: colorVariables.grey_300,
@@ -420,6 +426,14 @@ const LIGHT_COLORS = {
     popup_white: colorVariables.grey_0,
     popup_black: colorVariables.grey_900,
     popup_grey: colorVariables.grey_500,
+  },
+
+  // Input Colors
+  input: {
+    background: colorVariables.neutral_0,
+    placeholder: colorVariables.neutral_500,
+    border: colorVariables.neutral_300,
+    textColor: colorVariables.neutral_900,
   },
 
   // surface
@@ -613,6 +627,12 @@ const DARK_COLORS: ColorTypes = {
     secondary: colorVariables.neutral_800,
   },
   text: {
+    primary: colorVariables.neutral_0,
+    secondary: colorVariables.neutral_500,
+    highlight: colorVariables.emerald_400,
+    link: colorVariables.blue_400,
+    danger: colorVariables.neutral_950,
+
     general_strong: colorVariables.grey_0,
     general_medium: colorVariables.grey_50,
     general_light: colorVariables.grey_100,
@@ -648,6 +668,14 @@ const DARK_COLORS: ColorTypes = {
     popup_white: colorVariables.grey_0,
     popup_black: colorVariables.grey_900,
     popup_grey: colorVariables.grey_500,
+  },
+
+  // Input Colors
+  input: {
+    background: colorVariables.neutral_800,
+    placeholder: colorVariables.neutral_500,
+    border: colorVariables.neutral_700,
+    textColor: colorVariables.neutral_0,
   },
 
   // surface
