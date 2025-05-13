@@ -16,6 +16,13 @@ export const spacing_tokens = {
   margin_top_bot: 24,
 };
 
+export const layout_tokens = {
+  border_radius: 16,
+  screen_padding: 16,
+  screen_padding_sm: 8,
+  screen_padding_lg: 24,
+};
+
 export const radius_tokens = {
   sharp: 0,
   xxs: 2,
