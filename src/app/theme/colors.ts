@@ -281,6 +281,33 @@ const LIGHT_COLORS = {
     underlineDisabledText: colorVariables.neutral_500,
   },
 
+  // Icon Button
+  iconButton: {
+    /// Primary
+    primary: colorVariables.emerald_50,
+    primaryPressed: colorVariables.emerald_100,
+    primaryBorder: colorVariables.emerald_200,
+    primaryDisabled: colorVariables.neutral_300,
+    primaryDisabledIcon: colorVariables.neutral_500,
+    primaryDisabledBorder: colorVariables.neutral_300,
+
+    /// Secondary
+    secondary: 'transparent',
+    secondaryPressed: colorVariables.neutral_100,
+    secondaryBorder: colorVariables.neutral_300,
+    secondaryDisabled: 'transparent',
+    secondaryDisabledBorder: colorVariables.neutral_300,
+    secondaryDisabledIcon: colorVariables.neutral_300,
+    secondaryDisabledText: colorVariables.neutral_300,
+
+    /// Ghost
+    ghost: 'transparent',
+    ghostPressed: colorVariables.neutral_200,
+    ghostBorder: 'transparent',
+    ghostDisabled: 'transparent',
+    ghostDisabledIcon: colorVariables.neutral_300,
+  },
+
   // Toggle Switch
   toggleSwitch: {
     toggle: colorVariables.neutral_0,
@@ -479,6 +506,33 @@ const DARK_COLORS: ColorTypes = {
     /// Underline
     underlineText: colorVariables.neutral_900,
     underlineDisabledText: colorVariables.neutral_500,
+  },
+
+  // Icon Button
+  iconButton: {
+    /// Primary
+    primary: colorVariables.emerald_950,
+    primaryPressed: 'transparent',
+    primaryBorder: colorVariables.emerald_900,
+    primaryDisabled: colorVariables.neutral_800,
+    primaryDisabledIcon: colorVariables.neutral_600,
+    primaryDisabledBorder: colorVariables.neutral_800,
+
+    /// Secondary
+    secondary: 'transparent',
+    secondaryPressed: colorVariables.neutral_700,
+    secondaryBorder: colorVariables.neutral_50,
+    secondaryDisabled: 'transparent',
+    secondaryDisabledBorder: colorVariables.neutral_600,
+    secondaryDisabledIcon: colorVariables.neutral_600,
+    secondaryDisabledText: colorVariables.neutral_500,
+
+    /// Ghost
+    ghost: 'transparent',
+    ghostPressed: colorVariables.neutral_700,
+    ghostBorder: 'transparent',
+    ghostDisabled: 'transparent',
+    ghostDisabledIcon: colorVariables.neutral_600,
   },
 
   // Toggle Switch
