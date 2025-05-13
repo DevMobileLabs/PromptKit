@@ -241,6 +241,13 @@ export const colorVariables = {
 
 // Theme colors
 const LIGHT_COLORS = {
+  //accordion
+  accordion: {
+    background: colorVariables.neutral_150,
+    title: colorVariables.neutral_900,
+    content: colorVariables.neutral_900,
+  },
+
   button: {
     text: colorVariables.neutral_0,
     /// Primary
@@ -433,6 +440,13 @@ const LIGHT_COLORS = {
 };
 
 const DARK_COLORS: ColorTypes = {
+  //accordion
+  accordion: {
+    background: colorVariables.neutral_150,
+    title: colorVariables.neutral_200,
+    content: colorVariables.neutral_100,
+  },
+
   button: {
     text: colorVariables.neutral_0,
 
