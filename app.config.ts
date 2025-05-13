@@ -70,6 +70,12 @@ export default ({ config }: ConfigContext): ExpoConfig => {
       favicon: appImageAsset.appWebFavicon,
     },
 
+    extra: {
+      eas: {
+        projectId: process.env.EXPO_PUBLIC_EAS_PROJECT_ID,
+      },
+    },
+
     // Plugins configuration (for example, expo-font)
     plugins: [
       [
