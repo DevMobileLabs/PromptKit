@@ -12,9 +12,9 @@ const appOrientation = 'portrait';
 const appUserInterfaceStyle = 'light';
 const appScheme = 'promptkit';
 // Use relative paths directly
-const appSplashBackgroundColor = '#ffffff';
+const appSplashBackgroundColor = '#000000';
 // Use relative paths directly
-const appAdaptiveBackgroundColor = '#ffffff';
+const appAdaptiveBackgroundColor = '#000000';
 const appSplashEdgeToEdgeEnabled = true;
 
 const appImageAsset = {
@@ -57,6 +57,7 @@ export default ({ config }: ConfigContext): ExpoConfig => {
     ios: {
       supportsTablet: true,
       bundleIdentifier: 'com.anonymous.PromptKit', // Ensure this is unique for your app
+      backgroundColor: appSplashBackgroundColor,
     },
     android: {
       adaptiveIcon: {
