@@ -20,4 +20,4 @@ export type AllModuleParamList = NoDuplicateKeys<[AuthModuleParams]>;
 
 export const mainScreens = [...AuthModuleConfig];
 
-export * from './navigationConfig';
+export * from './navigation-config';

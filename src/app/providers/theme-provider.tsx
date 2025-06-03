@@ -18,7 +18,6 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children, initialTheme }) => {
-  // Sử dụng useColorScheme() để lấy theme mặc định của hệ thống nếu initialTheme không được truyền
   const systemColorScheme = useColorScheme();
   const defaultTheme = initialTheme || systemColorScheme || 'light';
 

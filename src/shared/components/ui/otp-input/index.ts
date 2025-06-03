@@ -1,2 +1,2 @@
-export * from './OTPInput';
-export { default as OTPInput } from './OTPInput';
+export * from './otp-input';
+export { default as OTPInput } from './otp-input';

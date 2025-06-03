@@ -62,46 +62,8 @@ export const getTextVariantStyles = (variant: ButtonVariant, colors: ColorTypes)
   textVariantStylesMap[variant]?.(colors) || {};
 
 // -----------------------------------------------------------------------------
-// Disabled Styles
-// -----------------------------------------------------------------------------
-
-const disabledStylesMap: Record<ButtonVariant, (colors: ColorTypes) => ViewStyle> = {
-  primary: (colors) => ({
-    backgroundColor: colors.button.primaryDisabled,
-    borderColor: colors.button.primaryDisabled,
-  }),
-  secondary: (colors) => ({
-    backgroundColor: colors.button.secondaryDisabled,
-    borderColor: colors.button.secondaryDisabledBorder,
-  }),
-  underline: () => ({ borderColor: 'transparent', backgroundColor: 'transparent' }),
-  destructive: (colors) => ({
-    // backgroundColor: colors.button.destructiveDisabled,
-    backgroundColor: 'transparent',
-    borderColor: colors.button.destructiveDisabledBorder,
-  }),
-};
-
-export const getDisabledStyles = (variant: ButtonVariant, colors: ColorTypes): ViewStyle =>
-  disabledStylesMap[variant]?.(colors) || {};
-
-// -----------------------------------------------------------------------------
 // Disabled Text Styles
 // -----------------------------------------------------------------------------
-
-const disabledTextStylesMap: Record<ButtonVariant, (colors: ColorTypes) => TextStyle> = {
-  primary: (colors) => ({ color: colors.button.primaryDisabledText }),
-  secondary: (colors) => ({
-    color: colors.button.secondaryDisabledText,
-  }),
-  underline: (colors) => ({ color: colors.button.underlineDisabledText }),
-  destructive: (colors) => ({
-    color: colors.button.destructiveDisabledText,
-  }),
-};
-
-export const getDisabledTextStyles = (variant: ButtonVariant, colors: ColorTypes): TextStyle =>
-  disabledTextStylesMap[variant]?.(colors) || {};
 
 // -----------------------------------------------------------------------------
 // Size Styles

@@ -18,9 +18,6 @@ import {
   ButtonSize,
   ButtonVariant,
   getButtonContentStyle,
-  getDisabledStyles,
-  getDisabledTextStyles,
-  getPressVariantStyles,
   getSizeStyles,
   getTextSizeStyles,
   getTextVariantStyles,
@@ -87,10 +84,7 @@ const Button = forwardRef<any, ButtonProps>(
 
     // Memoized styles
     const buttonVariantStyle = useMemo(() => getVariantStyles(variant, colors), [variant, colors]);
-    const pressVariantStyle = useMemo(() => getPressVariantStyles(variant, colors), [variant, colors]);
     const textVariantStyle = useMemo(() => getTextVariantStyles(variant, colors), [variant, colors]);
-    const defaultDisabledStyle = useMemo(() => getDisabledStyles(variant, colors), [variant, colors]);
-    const defaultDisabledTextStyle = useMemo(() => getDisabledTextStyles(variant, colors), [variant, colors]);
     const buttonSizeStyle = useMemo(() => getSizeStyles(size), [size]);
     const textSizeStyle = useMemo(() => getTextSizeStyles(size), [size]);
     const buttonContentStyle = useMemo(
@@ -101,9 +95,7 @@ const Button = forwardRef<any, ButtonProps>(
     // Render the button's icon
     const renderIcon = useCallback((): React.JSX.Element | null => {
       if (isReactElement(Icon)) {
-        // Clone the element to potentially add fill color or other props if needed
-        // return React.cloneElement(Icon, { fill: iconFillColor || Icon.props.fill });
-        return Icon; // Returning as is for simplicity, modify if you need to inject props
+        return Icon;
       }
 
       if (isImageSource(Icon)) {
@@ -113,7 +105,7 @@ const Button = forwardRef<any, ButtonProps>(
             source={Icon}
             style={{ width: isSmall ? 20 : 24, height: isSmall ? 20 : 24 }}
             resizeMode="contain"
-            tintColor={iconFillColor} // Apply tintColor if provided
+            tintColor={iconFillColor}
           />
         );
       }
@@ -127,7 +119,6 @@ const Button = forwardRef<any, ButtonProps>(
         return (
           <ActivityIndicator
             testID="activity-indicator"
-            // Determine color based on variant and iconFillColor
             color={
               iconFillColor || (variant === 'underline' ? LIGHT_COLORS.button.primary : LIGHT_COLORS.background.primary)
             }
@@ -147,7 +138,7 @@ const Button = forwardRef<any, ButtonProps>(
               <RNEButton
                 title={title}
                 type="clear" // Use clear type to make it look like just text
-                titleStyle={[textVariantStyle, textSizeStyle, titleStyle, disabled && defaultDisabledTextStyle]}
+                titleStyle={[textVariantStyle, textSizeStyle, titleStyle]}
                 containerStyle={{ margin: 0 }} // Remove default margin
                 buttonStyle={{ padding: 0 }} // Remove default padding
               />
@@ -160,7 +151,6 @@ const Button = forwardRef<any, ButtonProps>(
               testID="activity-indicator"
               style={styles.activityIndicator}
               size={'small'}
-              // Determine color based on variant and iconFillColor
               color={
                 iconFillColor ||
                 (variant === 'underline' ? LIGHT_COLORS.button.primary : LIGHT_COLORS.background.primary)
@@ -177,13 +167,11 @@ const Button = forwardRef<any, ButtonProps>(
         onPress={onPress}
         disabled={isLoading || disabled}
         buttonStyle={[styles.button, buttonVariantStyle, buttonSizeStyle, buttonStyle]}
-        containerStyle={[pressedStyle || pressVariantStyle, disabled && (disabledStyle || defaultDisabledStyle)]}
-        title="" // Set title to empty string as content is rendered manually
-        type={variant === 'underline' ? 'clear' : 'solid'} // Use clear type for underline variant
-        size={rneSize} // Pass RNE specific size
-        {...props} // Spread any other RNEButtonProps
+        type={variant === 'underline' ? 'clear' : 'solid'}
+        size={rneSize}
+        {...props}
       >
-        {renderContent()} {/* Render custom content */}
+        {renderContent()}
       </RNEButton>
     );
   }

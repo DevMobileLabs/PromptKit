@@ -1,3 +1,3 @@
-export { default as AppNavigator } from './AppNavigator';
-export { default as BottomTabBar } from './BottomTabBar';
-export * from './StackNavigator';
+export { default as AppNavigator } from './app-navigator';
+export { default as BottomTabBar } from './bottom-tab-bar';
+export * from './stack-navigator';

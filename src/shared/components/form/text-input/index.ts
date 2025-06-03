@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Platform } from 'react-native';
 
-import TextInputFieldAndroid from './TextInputField.android';
-import TextInputFieldIos from './TextInputField.ios';
+import TextInputFieldAndroid from './text-input-field.android';
+import TextInputFieldIos from './text-input-field.ios';
 
 const TextInputField = Platform.select({
   ios: () => TextInputFieldIos,

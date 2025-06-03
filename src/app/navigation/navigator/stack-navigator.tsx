@@ -6,7 +6,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { mainScreens, screenDefaultOptions } from '../config';
 import RouteName from '../route';
 import { RootStackParamList } from '../types';
-import BottomTabBar from './BottomTabBar';
+import BottomTabBar from './bottom-tab-bar';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 const Tab = createBottomTabNavigator<RootStackParamList>();

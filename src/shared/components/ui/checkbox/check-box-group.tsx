@@ -2,7 +2,7 @@ import React, { memo, useMemo } from 'react';
 import { StyleProp, StyleSheet, View, ViewProps, ViewStyle } from 'react-native';
 
 import { AppearanceMode } from '@/types/theme';
-import CheckBox, { CheckBoxProps } from './Checkbox';
+import CheckBox, { CheckBoxProps } from './check-box';
 import { CheckboxContainedMode, itemModeStyles } from './utils';
 
 export interface CheckboxItem extends CheckBoxProps {

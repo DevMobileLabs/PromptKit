@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
-import { View, ViewStyle } from 'react-native';
-import { Edge, EdgeInsets, SafeAreaViewProps, useSafeAreaInsets } from 'react-native-safe-area-context';
+import { View, ViewProps, ViewStyle } from 'react-native';
+import { Edge, EdgeInsets, useSafeAreaInsets } from 'react-native-safe-area-context';
 
 type EdgeMode = 'padding' | 'margin';
 
@@ -9,7 +9,7 @@ type Props = {
   style?: ViewStyle;
   mode?: EdgeMode;
   edges?: Edge[];
-} & Omit<SafeAreaViewProps, 'edges'>;
+} & Omit<ViewProps, 'edges'>;
 
 // Helper to parse version
 const SafeAreaView = ({

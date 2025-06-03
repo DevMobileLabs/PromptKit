@@ -1,3 +1,3 @@
-export { default as ErrorBoundary } from './ErrorBoundary';
-export { default as withProviders } from './withProviders';
-export * from './ThemeProvider';
+export { default as ErrorBoundary } from './error-boundary';
+export { default as withProviders } from './with-providers';
+export * from './theme-provider';

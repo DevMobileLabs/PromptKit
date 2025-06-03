@@ -1,5 +1,5 @@
 import React, { JSX } from 'react';
-import { MainStackNavigator } from './StackNavigator';
+import { MainStackNavigator } from './stack-navigator';
 
 const AppNavigator = (): JSX.Element => {
   return <MainStackNavigator />;

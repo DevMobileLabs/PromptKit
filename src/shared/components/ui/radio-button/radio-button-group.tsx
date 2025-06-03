@@ -5,7 +5,7 @@ import { StyleProp, StyleSheet, TextStyle, View, ViewProps, ViewStyle } from 're
 import { AppearanceMode } from '@/types/theme';
 
 import { colorVariables, scaleWidth } from '@/app/theme';
-import RadioButton, { RadioButtonProps } from './RadioButton';
+import RadioButton, { RadioButtonProps } from './radio-button';
 import { RadioButtonVariantStyles } from './utils';
 type RadioGroupLayout = 'row' | 'column';
 

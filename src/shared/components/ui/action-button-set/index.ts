@@ -1,1 +1,1 @@
-export { default as ActionButtonSet } from './ActionButtonSet';
+export { default as ActionButtonSet } from './action-button-set';

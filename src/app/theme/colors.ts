@@ -284,9 +284,9 @@ const LIGHT_COLORS = {
   // Icon Button
   iconButton: {
     /// Primary
-    primary: colorVariables.emerald_50,
-    primaryPressed: colorVariables.emerald_100,
-    primaryBorder: colorVariables.emerald_200,
+    primary: colorVariables.neutral_0,
+    primaryPressed: colorVariables.neutral_100,
+    primaryBorder: colorVariables.neutral_200,
     primaryDisabled: colorVariables.neutral_300,
     primaryDisabledIcon: colorVariables.neutral_500,
     primaryDisabledBorder: colorVariables.neutral_300,
@@ -381,7 +381,7 @@ const LIGHT_COLORS = {
 
   // Background Colors
   background: {
-    primary: colorVariables.neutral_100,
+    primary: colorVariables.neutral_0,
     secondary: colorVariables.neutral_0,
   },
   text: {

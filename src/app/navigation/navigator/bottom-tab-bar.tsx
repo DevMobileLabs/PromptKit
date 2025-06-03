@@ -5,7 +5,7 @@ import React, { useCallback } from 'react';
 import { Image, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import { TAB_BAR_MENU } from '../config/navigationConfig';
+import { TAB_BAR_MENU } from '../config/navigation-config';
 import { scaleWidth } from '@/app/theme';
 import { scaleHeight } from '@/app/theme';
 

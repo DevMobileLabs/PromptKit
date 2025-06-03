@@ -2,8 +2,8 @@
 import store from '@/store';
 import { PropsWithChildren } from 'react';
 import { Provider } from 'react-redux';
-import ErrorBoundary from './ErrorBoundary';
-import { ThemeProvider } from './ThemeProvider';
+import ErrorBoundary from './error-boundary';
+import { ThemeProvider } from './theme-provider';
 export const withProviders = (
   Component: React.ComponentType<PropsWithChildren<{}>>
 ): React.ComponentType<PropsWithChildren<{}>> => {

@@ -1,1 +1,1 @@
-export { default as FallbackError } from './FallbackError';
+export { default as FallbackError } from './fallback-error';
