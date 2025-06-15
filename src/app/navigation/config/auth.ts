@@ -1,8 +1,8 @@
-import { SignUpScreen, LoginScreen } from '@/features/auth';
+import { ForgotPasswordScreen, LoginEmailScreen, LoginScreen, SignUpScreen } from '@/features/auth';
 import RouteName from '../route';
 import { RouteConfig } from '../types';
 
-export const AuthModuleConfig: RouteConfig[] = [
+export const authModuleConfig: RouteConfig[] = [
   {
     name: RouteName.AUTH_LOGIN,
     component: LoginScreen,
@@ -15,9 +15,21 @@ export const AuthModuleConfig: RouteConfig[] = [
     component: SignUpScreen,
     options: {},
   },
+  {
+    name: RouteName.AUTH_LOGIN_EMAIL,
+    component: LoginEmailScreen,
+    options: {},
+  },
+  {
+    name: RouteName.AUTH_FORGOT_PASSWORD,
+    component: ForgotPasswordScreen,
+    options: {},
+  },
 ];
 
 export type AuthModuleParams = {
   [RouteName.AUTH_LOGIN]: undefined;
   [RouteName.AUTH_SIGNUP]: undefined;
+  [RouteName.AUTH_LOGIN_EMAIL]: undefined;
+  [RouteName.AUTH_FORGOT_PASSWORD]: undefined;
 };

@@ -1,4 +1,4 @@
-import { AuthModuleConfig, AuthModuleParams } from './auth';
+import { authModuleConfig, AuthModuleParams } from './auth';
 
 type NoDuplicateKeys<T extends T[number][]> = T extends [infer First, ...infer Rest extends T[number][]]
   ? Rest extends [] // Base case: if there's no more types left to compare, return First as the valid type
@@ -18,6 +18,6 @@ type NoDuplicateKeysHelper<T, U> = U extends 'Error: Duplicate keys found'
  */
 export type AllModuleParamList = NoDuplicateKeys<[AuthModuleParams]>;
 
-export const mainScreens = [...AuthModuleConfig];
+export const mainScreens = [...authModuleConfig];
 
 export * from './navigation-config';

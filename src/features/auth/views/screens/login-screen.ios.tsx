@@ -5,18 +5,20 @@ import { AppIcon, TextDivider } from '@/shared/components/ui';
 import { Button } from '@/shared/components/ui/button';
 import { IconButton } from '@/shared/components/ui/icon-button';
 import { icons } from '@assets/icons';
-import { useNavigation } from '@react-navigation/native';
 import { useMemo } from 'react';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { useLoginScreen } from '../../viewmodel';
 
 export const LoginScreen = () => {
-  const navigation = useNavigation();
   const { colors } = useAppTheme();
   const styles = useMemo(() => createStyles(colors), [colors]);
 
-  const onLogin = () => {
-    // TODO: Implement login logic
-  };
+  const {
+    handlePressLoginWithEmail,
+    handlePressLoginWithGoogle,
+    handlePressLoginWithFacebook,
+    handlePressLoginWithApple,
+  } = useLoginScreen();
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
@@ -26,11 +28,11 @@ export const LoginScreen = () => {
           size={scaleWidth(100)}
           iconStyle={{ borderRadius: scaleWidth(layout_tokens.border_radius) }}
         />
-        <Text style={styles.headerText}>Start managing your business!</Text>
+        <Text style={styles.headerText}>Explore the prompt of the day!</Text>
 
         <View style={styles.contentContainer}>
           <Button
-            onPress={onLogin}
+            onPress={handlePressLoginWithEmail}
             variant="primary"
             titleStyle={styles.emailButtonText}
             title="Continue with email"
@@ -40,9 +42,9 @@ export const LoginScreen = () => {
           <TextDivider label="Or" />
 
           <View style={styles.circleButtonContainer}>
-            <IconButton icon={icons.facebook} size="lg" />
-            <IconButton icon={icons.google} size="lg" />
-            <IconButton icon={icons.apple} size="lg" />
+            <IconButton icon={icons.facebook} size="lg" onPress={handlePressLoginWithFacebook} />
+            <IconButton icon={icons.google} size="lg" onPress={handlePressLoginWithGoogle} />
+            <IconButton icon={icons.apple} size="lg" onPress={handlePressLoginWithApple} />
           </View>
 
           <View style={styles.loginContainer}>
