@@ -2,8 +2,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import useDeepLinking from './app/device/linking';
-import { AppNavigator, navigationService, useNavigationTheme } from './app/navigation';
-import { withProviders } from './app/providers';
+import { AppNavigator, navigationService, useNavigationTheme } from './navigation';
+import { withProviders } from './providers';
 
 const App = () => {
   const theme = useNavigationTheme();

@@ -1,17 +1,16 @@
-import { RouteName } from '@/app/navigation';
-import { useAppTheme } from '@/app/providers';
 import { ColorTypes, fonts, layout_tokens, scaleHeight, scaleWidth, spacing_tokens } from '@/app/theme';
+import { RouteName } from '@/navigation';
+import { useAppTheme } from '@/providers';
 import TextInputField from '@/shared/components/form/text-input';
 import { SafeAreaView, TouchHideKeyboard } from '@/shared/components/layouts';
 import { AppIcon, TextDivider } from '@/shared/components/ui';
 import { Button } from '@/shared/components/ui/button';
 import CheckBox from '@/shared/components/ui/checkbox/check-box';
-import { IconButton } from '@/shared/components/ui/icon-button';
 import useAppNavigation from '@/shared/hooks/use-app-navigation';
-import { icons } from '@assets/icons';
 import { useCallback, useLayoutEffect, useMemo } from 'react';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { useLoginEmail, useLoginScreen } from '../../viewmodel';
+import { useLoginEmail, useLoginScreen } from '../../viewmodels';
+import { SocialLoginButtons } from '../components';
 
 export const LoginEmailScreen = () => {
   const { colors } = useAppTheme();
@@ -20,7 +19,7 @@ export const LoginEmailScreen = () => {
   const { email, setEmail, password, setPassword, isRememberMe, handlePressLogin, handlePressIsRememberMe } =
     useLoginEmail();
 
-  const { handlePressLoginWithGoogle, handlePressLoginWithFacebook } = useLoginScreen();
+  const { handlePressLoginWithGoogle, handlePressLoginWithFacebook, handlePressLoginWithApple } = useLoginScreen();
 
   useLayoutEffect(() => {
     navigation.setOptions({ headerShown: false });
@@ -56,10 +55,11 @@ export const LoginEmailScreen = () => {
 
             <View style={styles.contentContainer}>
               <TextDivider label="Or" />
-              <View style={styles.circleButtonContainer}>
-                <IconButton icon={icons.facebook} size="lg" onPress={handlePressLoginWithFacebook} />
-                <IconButton icon={icons.google} size="lg" onPress={handlePressLoginWithGoogle} />
-              </View>
+              <SocialLoginButtons
+                handlePressLoginWithFacebook={handlePressLoginWithFacebook}
+                handlePressLoginWithGoogle={handlePressLoginWithGoogle}
+                handlePressLoginWithApple={handlePressLoginWithApple}
+              />
             </View>
           </View>
         </SafeAreaView>

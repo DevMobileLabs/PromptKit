@@ -1,19 +1,23 @@
-import { useAppTheme } from '@/app/providers';
 import { ColorTypes, fonts, layout_tokens, scaleHeight, scaleWidth, spacing_tokens } from '@/app/theme';
+import { useAppTheme } from '@/providers';
 import { SafeAreaView } from '@/shared/components/layouts';
 import { AppIcon, TextDivider } from '@/shared/components/ui';
 import { Button } from '@/shared/components/ui/button';
-import { IconButton } from '@/shared/components/ui/icon-button';
-import { icons } from '@assets/icons';
 import { useMemo } from 'react';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { useLoginScreen } from '../../viewmodel';
+import { useLoginScreen } from '../../viewmodels';
+import SocialLoginButtons from '../components/social-login-buttons';
 
 export const LoginScreen = () => {
   const { colors } = useAppTheme();
   const styles = useMemo(() => createStyles(colors), [colors]);
 
-  const { handlePressLoginWithEmail, handlePressLoginWithGoogle, handlePressLoginWithFacebook } = useLoginScreen();
+  const {
+    handlePressLoginWithEmail,
+    handlePressLoginWithGoogle,
+    handlePressLoginWithFacebook,
+    handlePressLoginWithApple,
+  } = useLoginScreen();
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
@@ -36,10 +40,11 @@ export const LoginScreen = () => {
 
           <TextDivider label="Or" />
 
-          <View style={styles.circleButtonContainer}>
-            <IconButton icon={icons.facebook} size="lg" onPress={handlePressLoginWithFacebook} />
-            <IconButton icon={icons.google} size="lg" onPress={handlePressLoginWithGoogle} />
-          </View>
+          <SocialLoginButtons
+            handlePressLoginWithFacebook={handlePressLoginWithFacebook}
+            handlePressLoginWithGoogle={handlePressLoginWithGoogle}
+            handlePressLoginWithApple={handlePressLoginWithApple}
+          />
 
           <View style={styles.loginContainer}>
             <Text style={styles.loginText}>Already have an account?</Text>

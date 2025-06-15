@@ -1,6 +1,9 @@
 const RouteName = {
   /** Stack */
 
+  /** Onboarding */
+  ONBOARDING: 'onboarding',
+
   /** Tab */
   MAIN_TAB: 'main-tab',
 

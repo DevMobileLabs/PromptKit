@@ -1,2 +1,3 @@
 export { default as useLoginEmail } from './use-login-email';
 export { default as useLoginScreen } from './use-login-screen';
+export { default as useForgotPasswordScreen } from './use-forgot-password-screen';

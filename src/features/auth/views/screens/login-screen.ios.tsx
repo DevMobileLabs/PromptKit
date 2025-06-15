@@ -1,13 +1,12 @@
-import { useAppTheme } from '@/app/providers';
 import { ColorTypes, fonts, layout_tokens, scaleHeight, scaleWidth, spacing_tokens } from '@/app/theme';
+import { useAppTheme } from '@/providers';
 import { SafeAreaView } from '@/shared/components/layouts';
 import { AppIcon, TextDivider } from '@/shared/components/ui';
 import { Button } from '@/shared/components/ui/button';
-import { IconButton } from '@/shared/components/ui/icon-button';
-import { icons } from '@assets/icons';
 import { useMemo } from 'react';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { useLoginScreen } from '../../viewmodel';
+import { useLoginScreen } from '../../viewmodels';
+import SocialLoginButtons from '../components/social-login-buttons';
 
 export const LoginScreen = () => {
   const { colors } = useAppTheme();
@@ -41,11 +40,11 @@ export const LoginScreen = () => {
 
           <TextDivider label="Or" />
 
-          <View style={styles.circleButtonContainer}>
-            <IconButton icon={icons.facebook} size="lg" onPress={handlePressLoginWithFacebook} />
-            <IconButton icon={icons.google} size="lg" onPress={handlePressLoginWithGoogle} />
-            <IconButton icon={icons.apple} size="lg" onPress={handlePressLoginWithApple} />
-          </View>
+          <SocialLoginButtons
+            handlePressLoginWithFacebook={handlePressLoginWithFacebook}
+            handlePressLoginWithGoogle={handlePressLoginWithGoogle}
+            handlePressLoginWithApple={handlePressLoginWithApple}
+          />
 
           <View style={styles.loginContainer}>
             <Text style={styles.loginText}>Already have an account?</Text>
@@ -99,12 +98,7 @@ const createStyles = (colors: ColorTypes) =>
       color: colors.text.general_white,
       fontWeight: '600',
     },
-    circleButtonContainer: {
-      flexDirection: 'row',
-      justifyContent: 'center',
-      gap: scaleWidth(spacing_tokens.s_20),
-      marginBottom: scaleHeight(spacing_tokens.s_20),
-    },
+
     loginContainer: {
       flexDirection: 'row',
       alignItems: 'center',

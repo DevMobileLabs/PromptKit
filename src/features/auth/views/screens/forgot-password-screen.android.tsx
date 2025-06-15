@@ -1,5 +1,5 @@
-import { useAppTheme } from '@/app/providers';
 import { ColorTypes, fonts, layout_tokens, scaleHeight, scaleWidth, spacing_tokens } from '@/app/theme';
+import { useAppTheme } from '@/providers';
 import TextInputField from '@/shared/components/form/text-input';
 import { SafeAreaView, TouchHideKeyboard } from '@/shared/components/layouts';
 import { AppIcon } from '@/shared/components/ui';
@@ -7,7 +7,7 @@ import { Button } from '@/shared/components/ui/button';
 import useAppNavigation from '@/shared/hooks/use-app-navigation';
 import { useLayoutEffect, useMemo } from 'react';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import useForgotPasswordScreen from '../../viewmodel/use-forgot-password-screen';
+import { useForgotPasswordScreen } from '../../viewmodels';
 
 export const ForgotPasswordScreen = () => {
   const { colors } = useAppTheme();

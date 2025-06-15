@@ -1,4 +1,4 @@
-import { RouteName } from '@/app/navigation';
+import { RouteName } from '@/navigation';
 import useAppNavigation from '@/shared/hooks/use-app-navigation';
 import { useCallback } from 'react';
 

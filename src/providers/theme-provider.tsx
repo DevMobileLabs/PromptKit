@@ -1,7 +1,7 @@
 import { ThemeName } from '@/types/theme';
 import React, { createContext, ReactNode, useContext, useMemo, useState } from 'react';
 import { useColorScheme } from 'react-native'; // Optional: để lấy theme hệ thống ban đầu
-import { ColorTypes, DARK_COLORS, LIGHT_COLORS } from '../theme';
+import { ColorTypes, DARK_COLORS, LIGHT_COLORS } from '../app/theme';
 
 type ThemeContextType = {
   theme: 'light' | 'dark';

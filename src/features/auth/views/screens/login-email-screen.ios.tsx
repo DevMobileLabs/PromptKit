@@ -1,18 +1,17 @@
-import { RouteName } from '@/app/navigation';
-import { useAppTheme } from '@/app/providers';
 import { ColorTypes, fonts, layout_tokens, scaleHeight, scaleWidth, spacing_tokens } from '@/app/theme';
+import { RouteName } from '@/navigation';
+import { useAppTheme } from '@/providers';
 import TextInputField from '@/shared/components/form/text-input';
 import { SafeAreaView, TouchHideKeyboard } from '@/shared/components/layouts';
 import { AppIcon, TextDivider } from '@/shared/components/ui';
 import { Button } from '@/shared/components/ui/button';
 import CheckBox from '@/shared/components/ui/checkbox/check-box';
-import { IconButton } from '@/shared/components/ui/icon-button';
 import useAppNavigation from '@/shared/hooks/use-app-navigation';
-import { icons } from '@assets/icons';
 import { useLayoutEffect, useMemo } from 'react';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { useLoginScreen } from '../../viewmodel';
-import useLoginEmail from '../../viewmodel/use-login-email';
+import { useLoginScreen } from '../../viewmodels';
+import useLoginEmail from '../../viewmodels/use-login-email';
+import SocialLoginButtons from '../components/social-login-buttons';
 
 export const LoginEmailScreen = () => {
   const { colors } = useAppTheme();
@@ -53,11 +52,11 @@ export const LoginEmailScreen = () => {
 
             <View style={styles.contentContainer}>
               <TextDivider label="Or" />
-              <View style={styles.circleButtonContainer}>
-                <IconButton icon={icons.facebook} size="lg" onPress={handlePressLoginWithFacebook} />
-                <IconButton icon={icons.google} size="lg" onPress={handlePressLoginWithGoogle} />
-                <IconButton icon={icons.apple} size="lg" onPress={handlePressLoginWithApple} />
-              </View>
+              <SocialLoginButtons
+                handlePressLoginWithFacebook={handlePressLoginWithFacebook}
+                handlePressLoginWithGoogle={handlePressLoginWithGoogle}
+                handlePressLoginWithApple={handlePressLoginWithApple}
+              />
             </View>
           </View>
         </SafeAreaView>
