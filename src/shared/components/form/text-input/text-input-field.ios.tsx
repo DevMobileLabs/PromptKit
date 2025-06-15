@@ -69,7 +69,7 @@ const TextInputField: React.FC<CustomTextInputFieldProps> = ({
   const labelStyle = {
     top: animatedLabel.interpolate({
       inputRange: [0, 1],
-      outputRange: [16, -10],
+      outputRange: [14, -10],
     }),
     fontSize: animatedLabel.interpolate({
       inputRange: [0, 0.8],

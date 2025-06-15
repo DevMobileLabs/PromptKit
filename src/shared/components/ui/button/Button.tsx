@@ -53,7 +53,7 @@ export interface ButtonProps extends Omit<RNEButtonProps, 'style' | 'onPress' | 
  * @param {ButtonProps} props - The properties for the Button component.
  * @returns {JSX.Element} The rendered Button component.
  */
-const Button = forwardRef<any, ButtonProps>(
+const Button = forwardRef<RNEButtonProps, ButtonProps>(
   (
     {
       title,
@@ -137,6 +137,7 @@ const Button = forwardRef<any, ButtonProps>(
               {/* Using RNEButton with type="clear" for title to leverage its text styling */}
               <RNEButton
                 title={title}
+                onPress={onPress}
                 type="clear" // Use clear type to make it look like just text
                 titleStyle={[textVariantStyle, textSizeStyle, titleStyle]}
                 containerStyle={{ margin: 0 }} // Remove default margin
