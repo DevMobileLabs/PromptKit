@@ -3,3 +3,4 @@ export * from './icon-button';
 export * from './otp-input';
 export * from './radio-button';
 export { default as TextDivider } from './text-divider';
+export { default as BackButton } from './back-button';

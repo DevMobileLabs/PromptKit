@@ -7,4 +7,5 @@ export const icons = {
   down: require('./arrow-down.png'),
   up: require('./arrow-up.png'),
   logo: require('./logo.png'),
+  back: require('./back.png'),
 };
