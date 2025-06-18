@@ -83,7 +83,7 @@ const ActionButtonSet: React.FC<ActionButtonSetProps> = ({
           {...action}
           theme={theme}
           title={action.Icon && layout === 'row' && maxButtonPerRow > 2 ? '' : action.title}
-          buttonStyle={[defaultStyles.buttonInRow, action.buttonStyle]}
+          buttonStyle={[action.buttonStyle]}
           testID={`action-button-set-button-${index}`}
         />
       ))}
@@ -118,9 +118,6 @@ const createStyles = () =>
     container: {},
     row: {
       flexDirection: 'row',
-    },
-    buttonInRow: {
-      flex: 1,
     },
   });
 

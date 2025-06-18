@@ -2,11 +2,11 @@ import { ColorTypes, fonts, layout_tokens, scaleHeight, scaleWidth, spacing_toke
 import { useAppTheme } from '@/providers';
 import TextInputField from '@/shared/components/form/text-input';
 import { SafeAreaView, TouchHideKeyboard } from '@/shared/components/layouts';
-import { AppIcon } from '@/shared/components/ui';
+import { AppIcon, BackButton } from '@/shared/components/ui';
 import { Button } from '@/shared/components/ui/button';
 import useAppNavigation from '@/shared/hooks/use-app-navigation';
 import { useLayoutEffect, useMemo } from 'react';
-import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useForgotPasswordScreen } from '../../viewmodels';
 
 export const ForgotPasswordScreen = () => {
@@ -16,7 +16,10 @@ export const ForgotPasswordScreen = () => {
   const { email, handleChangeEmail, handlePressForgotPassword, handlePressBackToLogin } = useForgotPasswordScreen();
 
   useLayoutEffect(() => {
-    navigation.setOptions({ headerShown: false });
+    navigation.setOptions({
+      headerLeft: () => <BackButton onPress={handlePressBackToLogin} />,
+      headerTitle: '',
+    });
   }, []);
 
   return (
@@ -34,10 +37,6 @@ export const ForgotPasswordScreen = () => {
 
             <Button title="Continue" onPress={handlePressForgotPassword} />
           </View>
-
-          <TouchableOpacity style={styles.backToLogin} onPress={handlePressBackToLogin}>
-            <Text style={styles.backToLoginText}>Back to Login</Text>
-          </TouchableOpacity>
         </SafeAreaView>
       </TouchHideKeyboard>
     </ScrollView>
@@ -76,20 +75,6 @@ const createStyles = (colors: ColorTypes) =>
     },
     formContainer: {
       gap: scaleHeight(spacing_tokens.s_12),
-    },
-    backToLogin: {
-      justifyContent: 'center',
-      alignItems: 'center',
-      marginTop: scaleHeight(spacing_tokens.s_12),
-      backgroundColor: colors.background.secondary,
-      padding: scaleHeight(spacing_tokens.s_12),
-      borderRadius: scaleWidth(layout_tokens.border_radius),
-    },
-    backToLoginText: {
-      fontSize: scaleWidth(fonts.size.small),
-      color: colors.text.primary,
-      textAlign: 'center',
-      textDecorationLine: 'underline',
     },
   });
 

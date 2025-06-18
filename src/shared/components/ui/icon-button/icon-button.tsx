@@ -27,7 +27,7 @@ import {
 /**
  * Props for the {@link IconButton} component.
  */
-interface IconButtonProps extends Omit<PressableProps, 'style'>, React.RefAttributes<View> {
+export interface IconButtonProps extends Omit<PressableProps, 'style'>, React.RefAttributes<View> {
   /**
    * The source of the icon image. Can be a local file, a remote URL, or an asset.
    */

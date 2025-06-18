@@ -1,29 +1,20 @@
-import { ColorTypes } from '@/app/theme';
+import { ColorTypes, layout_tokens, scaleHeight, scaleWidth, spacing_tokens } from '@/app/theme';
 import { getThemeColors } from '@/shared/utils';
-import { AppearanceMode } from '@/types/theme';
 import React, { useMemo, useRef, useState } from 'react';
-import { StyleSheet, TextInput, TextStyle, View, ViewProps, ViewStyle } from 'react-native';
+import { StyleSheet, TextInput, View } from 'react-native';
+import { OTPInputProps } from './types';
 
-export interface OTPInputProps extends ViewProps {
-  length?: number;
-  onChange?: (otp: string) => void;
-  inputStyle?: TextStyle;
-  containerStyle?: ViewStyle;
-  autoFocus?: boolean;
-  theme?: AppearanceMode;
-}
-
-const OTPInput: React.FC<OTPInputProps> = ({
-  length = 4,
+const OTPInput = ({
+  numberOfDigits = 4,
   onChange,
   inputStyle,
   containerStyle,
   autoFocus = false,
   theme = 'light',
   ...props
-}) => {
+}: OTPInputProps) => {
   const colors = getThemeColors(theme);
-  const [otp, setOtp] = useState(Array(length).fill(''));
+  const [otp, setOtp] = useState(Array(numberOfDigits).fill(''));
   const [focusedIndex, setFocusedIndex] = useState<number | null>(null);
   const inputRefs = useRef<TextInput[]>([]);
   const styles = useMemo(() => createStyles(colors), [colors]);
@@ -35,7 +26,7 @@ const OTPInput: React.FC<OTPInputProps> = ({
       setOtp(updatedOtp);
       onChange?.(updatedOtp.join(''));
 
-      if (text !== '' && index < length - 1) {
+      if (text !== '' && index < numberOfDigits - 1) {
         inputRefs.current[index + 1]?.focus();
       }
     }
@@ -49,7 +40,7 @@ const OTPInput: React.FC<OTPInputProps> = ({
 
   return (
     <View testID="otp-container" style={[styles.container, containerStyle]} {...props}>
-      {Array.from({ length }).map((_, index) => (
+      {Array.from({ length: numberOfDigits }).map((_, index) => (
         <TextInput
           testID={`otp-input-${index}`}
           key={index}
@@ -77,21 +68,20 @@ const createStyles = (colors: ColorTypes) =>
   StyleSheet.create({
     container: {
       flexDirection: 'row',
-      justifyContent: 'space-evenly',
+      justifyContent: 'space-between',
       alignItems: 'center',
-      paddingHorizontal: 10,
       width: '100%',
       flexWrap: 'wrap',
     },
     input: {
-      width: 79,
-      height: 42,
-      borderWidth: 1,
+      width: scaleWidth(50),
+      height: scaleHeight(45),
+      borderWidth: scaleWidth(1),
       borderColor: colors.otpInput.border,
-      borderRadius: 8,
+      borderRadius: scaleWidth(layout_tokens.border_radius),
       textAlign: 'center',
       backgroundColor: colors.otpInput.backgroundColor,
-      marginVertical: 5,
+      marginVertical: scaleHeight(spacing_tokens.s_12),
     },
     inputFocused: {
       borderColor: colors.otpInput.borderHighlight,

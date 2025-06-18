@@ -1,25 +1,19 @@
 import { ColorTypes, fonts, layout_tokens, scaleHeight, scaleWidth, spacing_tokens } from '@/app/theme';
 import { useAppTheme } from '@/providers';
-import TextInputField from '@/shared/components/form/text-input';
 import { SafeAreaView, TouchHideKeyboard } from '@/shared/components/layouts';
-import { AppIcon, BackButton } from '@/shared/components/ui';
-import { Button } from '@/shared/components/ui/button';
+import { OTPInput } from '@/shared/components/ui';
+import ActionButtonSet from '@/shared/components/ui/action-button-set/action-button-set';
 import useAppNavigation from '@/shared/hooks/use-app-navigation';
 import { useLayoutEffect, useMemo } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
-import { useForgotPasswordScreen } from '../../viewmodels';
 
-export const ForgotPasswordScreen = () => {
+export const InputOtpScreen = () => {
   const { colors } = useAppTheme();
   const { navigation } = useAppNavigation();
   const styles = useMemo(() => createStyles(colors), [colors]);
-  const { email, handleChangeEmail, handlePressForgotPassword, handlePressBackToLogin } = useForgotPasswordScreen();
 
   useLayoutEffect(() => {
-    navigation.setOptions({
-      headerLeft: () => <BackButton onPress={handlePressBackToLogin} />,
-      headerTitle: '',
-    });
+    navigation.setOptions({ headerShown: false });
   }, []);
 
   return (
@@ -27,15 +21,19 @@ export const ForgotPasswordScreen = () => {
       <TouchHideKeyboard>
         <SafeAreaView style={styles.safeArea}>
           <View style={styles.logoContainer}>
-            <AppIcon name="logo" size={scaleWidth(80)} iconStyle={styles.logoIcon} />
-            <Text style={styles.headerText}>Forgot Password</Text>
-            <Text style={styles.subHeaderText}>Please enter your email to reset your password</Text>
+            <Text style={styles.headerText}>Input OTP</Text>
+            <Text style={styles.subHeaderText}>Please enter the OTP sent to your email</Text>
           </View>
 
           <View style={styles.formContainer}>
-            <TextInputField label="Email" value={email} onChangeText={handleChangeEmail} />
+            <OTPInput numberOfDigits={4} containerStyle={styles.otpContainer} />
 
-            <Button title="Continue" onPress={handlePressForgotPassword} />
+            <ActionButtonSet
+              actions={[
+                { onPress: () => {}, title: 'Verify', type: 'solid' },
+                { onPress: () => {}, title: 'Resend OTP', type: 'outline' },
+              ]}
+            />
           </View>
         </SafeAreaView>
       </TouchHideKeyboard>
@@ -57,6 +55,7 @@ const createStyles = (colors: ColorTypes) =>
     },
     logoContainer: {
       marginVertical: scaleHeight(spacing_tokens.s_20),
+      gap: scaleHeight(spacing_tokens.s_12),
     },
     logoIcon: {
       borderRadius: scaleWidth(layout_tokens.border_radius),
@@ -74,8 +73,11 @@ const createStyles = (colors: ColorTypes) =>
       textAlign: 'center',
     },
     formContainer: {
-      gap: scaleHeight(spacing_tokens.s_12),
+      gap: scaleHeight(spacing_tokens.s_24),
+    },
+    otpContainer: {
+      marginVertical: scaleHeight(spacing_tokens.s_12),
     },
   });
 
-export default ForgotPasswordScreen;
+export default InputOtpScreen;

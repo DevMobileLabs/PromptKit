@@ -13,6 +13,7 @@ const RouteName = {
   AUTH_SIGNUP: 'auth-signup',
   AUTH_LOGIN_EMAIL: 'auth-login-email',
   AUTH_FORGOT_PASSWORD: 'auth-forgot-password',
+  AUTH_INPUT_OTP: 'auth-input-otp',
   /** Tab */
   HOME: 'home',
   SEARCH: 'search',

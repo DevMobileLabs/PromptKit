@@ -1,4 +1,4 @@
-import { ForgotPasswordScreen, LoginEmailScreen, LoginScreen, SignUpScreen } from '@/features/auth';
+import { ForgotPasswordScreen, InputOtpScreen, LoginEmailScreen, LoginScreen, SignUpScreen } from '@/features/auth';
 import RouteName from '../route';
 import { RouteConfig } from '../types';
 
@@ -25,6 +25,11 @@ export const authModuleConfig: RouteConfig[] = [
     component: ForgotPasswordScreen,
     options: {},
   },
+  {
+    name: RouteName.AUTH_INPUT_OTP,
+    component: InputOtpScreen,
+    options: {},
+  },
 ];
 
 export type AuthModuleParams = {
@@ -32,4 +37,5 @@ export type AuthModuleParams = {
   [RouteName.AUTH_SIGNUP]: undefined;
   [RouteName.AUTH_LOGIN_EMAIL]: undefined;
   [RouteName.AUTH_FORGOT_PASSWORD]: undefined;
+  [RouteName.AUTH_INPUT_OTP]: undefined;
 };
