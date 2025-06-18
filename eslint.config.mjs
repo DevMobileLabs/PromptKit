@@ -35,101 +35,41 @@ export default [
       '@typescript-eslint/explicit-function-return-type': 'off',
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/naming-convention': [
-        'warn', // Mức độ cảnh báo
-        {
-          selector: 'default',
-          format: ['camelCase'],
-          // Cho phép các trường có dấu ngoặc kép (ví dụ: cho các key trong object)
-          filter: {
-            regex: '^(_|__)(.*)$',
-            match: false,
-          },
-        },
+        'warn',
         {
           selector: 'variable',
-          format: ['camelCase', 'PascalCase', 'UPPER_CASE'],
-          // Cho phép PascalCase cho các React Components
-          // Cho phép UPPER_CASE cho hằng số toàn cục
+          format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
+          leadingUnderscore: 'allow',
         },
         {
           selector: 'function',
-          format: ['camelCase', 'PascalCase'],
-          // Cho phép PascalCase cho các React Functional Components
+          format: ['PascalCase', 'camelCase'],
+        },
+        {
+          selector: 'typeLike',
+          format: ['PascalCase'],
+        },
+        {
+          selector: 'enumMember',
+          format: ['UPPER_CASE'],
         },
         {
           selector: 'parameter',
           format: ['camelCase'],
-          // Có thể thêm 'PascalCase' nếu bạn có các trường hợp đặc biệt, nhưng camelCase là phổ biến nhất cho tham số hàm.
+          leadingUnderscore: 'allow',
         },
         {
           selector: 'property',
-          format: ['camelCase', 'PascalCase', 'snake_case', 'UPPER_CASE'],
-          // camelCase cho hầu hết các thuộc tính
-          // PascalCase cho các React Components được truyền dưới dạng prop
-          // snake_case có thể dùng cho các trường hợp đặc biệt (ví dụ: dữ liệu từ API)
-          // UPPER_CASE cho các hằng số thuộc tính
-          filter: {
-            regex: '^(_|__)(.*)$',
-            match: false,
-          },
+          format: ['camelCase', 'PascalCase', 'UPPER_CASE', 'snake_case'],
+          leadingUnderscore: 'allow',
         },
         {
           selector: 'method',
           format: ['camelCase'],
-          // Các phương thức trong class
-        },
-        {
-          selector: 'typeLike', // Áp dụng cho interface, type alias, enum, class
-          format: ['PascalCase'],
-          // Tất cả các kiểu dữ liệu, interface, enum, class nên dùng PascalCase
-        },
-        {
-          selector: 'enumMember',
-          format: ['PascalCase', 'UPPER_CASE'],
-          // Thành viên của enum có thể dùng PascalCase hoặc UPPER_CASE
-        },
-        // Quy tắc riêng cho React Components (biến)
-        {
-          selector: 'variable',
-          format: ['PascalCase'],
-          types: ['function'], // Áp dụng cho các biến giữ giá trị là hàm
-          filter: {
-            regex: '^[A-Z]', // Lọc các biến bắt đầu bằng chữ hoa (thường là React Component)
-            match: true,
-          },
-        },
-        // Quy tắc riêng cho Event Handlers
-        {
-          selector: 'function',
-          filter: {
-            regex: '^(handle|on)[A-Z]', // Lọc các hàm bắt đầu bằng 'handle' hoặc 'on' theo sau là chữ hoa
-            match: true,
-          },
-          format: ['camelCase'],
-          // Đảm bảo các event handler tuân thủ camelCase
-        },
-        // Quy tắc cho các hằng số (biến)
-        {
-          selector: 'variable',
-          modifiers: ['const'], // Chỉ áp dụng cho hằng số
-          format: ['camelCase', 'UPPER_CASE'],
-          // Hằng số có thể là camelCase hoặc UPPER_CASE
-        },
-        {
-          selector: 'property',
-          modifiers: ['readonly'], // Chỉ áp dụng cho thuộc tính chỉ đọc
-          format: ['camelCase', 'PascalCase', 'snake_case', 'UPPER_CASE'],
-          filter: {
-            regex: '^(_|__)(.*)$',
-            match: false,
-          },
-        },
-        {
-          selector: 'parameter',
-          modifiers: ['destructured'],
-          format: ['camelCase', 'PascalCase'],
+          leadingUnderscore: 'allow',
         },
       ],
+
       '@typescript-eslint/no-magic-numbers': [
         'warn',
         {
