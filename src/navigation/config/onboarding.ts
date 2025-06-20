@@ -1,4 +1,4 @@
-import { OnboardingScreen } from '@/shared/components/layouts';
+import { OnboardingScreen } from '@/features/onboard';
 import RouteName from '../route';
 import { RouteConfig } from '../types';
 

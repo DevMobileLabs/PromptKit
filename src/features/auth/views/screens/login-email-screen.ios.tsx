@@ -48,7 +48,12 @@ export const LoginEmailScreen = () => {
               </View>
             </View>
 
-            <Button title="Login" onPress={handlePressLogin} />
+            <Button
+              title="Login"
+              onPress={handlePressLogin}
+              buttonStyle={styles.loginButton}
+              titleStyle={styles.loginButtonText}
+            />
 
             <View style={styles.contentContainer}>
               <TextDivider label="Or" />
@@ -130,6 +135,15 @@ const createStyles = (colors: ColorTypes) =>
       justifyContent: 'center',
       gap: scaleWidth(spacing_tokens.s_20),
       marginBottom: scaleHeight(spacing_tokens.s_20),
+    },
+    loginButton: {
+      backgroundColor: colors.button.primary,
+      width: '100%',
+      borderRadius: scaleWidth(layout_tokens.border_radius),
+    },
+    loginButtonText: {
+      color: colors.text.general_white,
+      fontWeight: '600',
     },
   });
 
