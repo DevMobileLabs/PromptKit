@@ -1,3 +1,4 @@
+import { BottomTabNavigationOptions } from '@react-navigation/bottom-tabs';
 import { ParamListBase } from '@react-navigation/native';
 import { NativeStackNavigationOptions } from '@react-navigation/native-stack';
 import React from 'react';
@@ -9,7 +10,7 @@ type RouteNameType = keyof AllModuleParamList;
 export type RouteConfig = {
   name: RouteNameType;
   component: React.ComponentType;
-  options?: NativeStackNavigationOptions;
+  options?: NativeStackNavigationOptions | BottomTabNavigationOptions;
 };
 
 export interface RootStackParamList extends AllModuleParamList, ParamListBase {}

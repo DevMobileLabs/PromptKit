@@ -1,9 +1,10 @@
-import { BottomTabBarProps, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { BottomTabBarProps, BottomTabNavigationOptions, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createNativeStackNavigator, NativeStackNavigationOptions } from '@react-navigation/native-stack';
 import React, { useCallback } from 'react';
 
 import { StyleSheet, Text, View } from 'react-native';
 import { mainScreens, screenDefaultOptions } from '../config';
+import { tabBarModuleConfig } from '../config/tab-bar';
 import RouteName from '../route';
 import { RootStackParamList } from '../types';
 import BottomTabBar from './bottom-tab-bar';
@@ -18,7 +19,12 @@ export const MainStackNavigator: React.ComponentType = () => {
       <Stack.Screen name={RouteName.MAIN_TAB} component={BottomTabNavigator} options={{ headerShown: false }} />
       {/* Main Screens */}
       {mainScreens.map((screen) => (
-        <Stack.Screen key={screen.name} name={screen.name} component={screen.component} options={screen.options} />
+        <Stack.Screen
+          key={screen.name}
+          name={screen.name}
+          component={screen.component}
+          options={screen.options as NativeStackNavigationOptions}
+        />
       ))}
     </Stack.Navigator>
   );
@@ -31,10 +37,14 @@ export const BottomTabNavigator: React.ComponentType = () => {
   );
   return (
     <Tab.Navigator tabBar={renderBottomTabBar} screenOptions={{ headerShown: false, lazy: true }}>
-      <Tab.Screen name={RouteName.HOME} getComponent={() => Screen1} />
-      <Tab.Screen name={RouteName.SEARCH} getComponent={() => Screen2} />
-      <Tab.Screen name={RouteName.NOTIFICATION} getComponent={() => Screen3} />
-      <Tab.Screen name={RouteName.PROFILE} getComponent={() => Screen4} />
+      {tabBarModuleConfig.map((screen) => (
+        <Tab.Screen
+          key={screen.name}
+          name={screen.name}
+          component={screen.component}
+          options={screen.options as BottomTabNavigationOptions}
+        />
+      ))}
     </Tab.Navigator>
   );
 };

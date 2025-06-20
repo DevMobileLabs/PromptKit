@@ -1,5 +1,7 @@
 import { authModuleConfig, AuthModuleParams } from './auth';
+import { homeModuleConfig, HomeModuleParams } from './home';
 import { onboardingModuleConfig, OnboardingModuleParams } from './onboarding';
+import { tabBarModuleConfig, TabBarModuleParams } from './tab-bar';
 
 type NoDuplicateKeys<T extends T[number][]> = T extends [infer First, ...infer Rest extends T[number][]]
   ? Rest extends [] // Base case: if there's no more types left to compare, return First as the valid type
@@ -17,8 +19,10 @@ type NoDuplicateKeysHelper<T, U> = U extends 'Error: Duplicate keys found'
  * @instruction
  * To add a new module, ensure that the module parameters are included in the array passed to `NoDuplicateKeys`.
  */
-export type AllModuleParamList = NoDuplicateKeys<[AuthModuleParams, OnboardingModuleParams]>;
+export type AllModuleParamList = NoDuplicateKeys<
+  [AuthModuleParams, OnboardingModuleParams, HomeModuleParams, TabBarModuleParams]
+>;
 
-export const mainScreens = [...authModuleConfig, ...onboardingModuleConfig];
+export const mainScreens = [...authModuleConfig, ...onboardingModuleConfig, ...homeModuleConfig, ...tabBarModuleConfig];
 
 export * from './navigation-config';

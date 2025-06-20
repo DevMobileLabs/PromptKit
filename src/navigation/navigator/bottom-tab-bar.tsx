@@ -1,17 +1,18 @@
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import { PlatformPressable, Text } from '@react-navigation/elements';
 import { useLinkBuilder } from '@react-navigation/native';
-import React, { useCallback } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { Image, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import { TAB_BAR_MENU } from '../config/navigation-config';
-import { scaleWidth } from '@/app/theme';
-import { scaleHeight } from '@/app/theme';
+import { ColorTypes, fonts, scaleHeight, scaleWidth, spacing_tokens } from '@/app/theme';
+import { useAppTheme } from '@/providers';
+import { TAB_BAR_MENU } from '../config/tab-bar';
 
 const BottomTabBar: React.FunctionComponent<BottomTabBarProps> = ({ state, descriptors, navigation }) => {
   const { buildHref } = useLinkBuilder();
-
+  const { colors } = useAppTheme();
+  const styles = useMemo(() => createStyles(colors), [colors]);
   const renderTab = useCallback(
     () =>
       TAB_BAR_MENU.map(({ index, title, icon }) => {
@@ -69,45 +70,44 @@ const BottomTabBar: React.FunctionComponent<BottomTabBarProps> = ({ state, descr
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    maxHeight: scaleHeight(82),
-    backgroundColor: '#010101',
-    borderTopColor: '#FFC115',
-    borderTopWidth: scaleWidth(1),
-    borderTopLeftRadius: scaleWidth(16),
-    borderTopRightRadius: scaleWidth(16),
-  },
-  wrapper: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: '100%',
-    paddingBlock: scaleHeight(16),
-    paddingInline: scaleWidth(20),
-  },
-  itemContainer: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: '100%',
-    gap: scaleHeight(6),
-  },
-  icon: {
-    height: scaleHeight(24),
-    aspectRatio: 1,
-    tintColor: '#999999',
-  },
-  iconSelected: {
-    tintColor: '#00A991',
-  },
-  text: {
-    fontSize: scaleWidth(12),
-    lineHeight: scaleWidth(15.6),
-    textAlign: 'center',
-    color: '#999999',
-  },
-  textSelected: {
-    color: '#FFFFFF',
-  },
-});
+const createStyles = (colors: ColorTypes) =>
+  StyleSheet.create({
+    container: {
+      maxHeight: scaleHeight(82),
+      backgroundColor: colors.background.primary,
+      borderTopColor: colors.background.secondary,
+      shadowColor: colors.background.secondary,
+    },
+    wrapper: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      paddingHorizontal: scaleWidth(spacing_tokens.s_24),
+      paddingVertical: scaleHeight(spacing_tokens.s_16),
+      shadowColor: colors.background.secondary,
+    },
+    itemContainer: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: scaleHeight(spacing_tokens.s_8),
+    },
+    icon: {
+      height: scaleHeight(spacing_tokens.s_24),
+      aspectRatio: 1,
+      tintColor: colors.text.secondary,
+    },
+    iconSelected: {
+      tintColor: colors.button.primary,
+    },
+    text: {
+      fontSize: scaleWidth(fonts.size.small),
+      lineHeight: scaleWidth(fonts.size.small),
+      textAlign: 'center',
+      color: colors.text.secondary,
+    },
+    textSelected: {
+      fontWeight: '500',
+      color: colors.text.primary,
+    },
+  });
 
 export default BottomTabBar;

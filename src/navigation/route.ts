@@ -16,8 +16,8 @@ const RouteName = {
   AUTH_INPUT_OTP: 'auth-input-otp',
   /** Tab */
   HOME: 'home',
-  SEARCH: 'search',
-  NOTIFICATION: 'notification',
+  DISCOVER: 'discover',
+  CHAT: 'chat',
   PROFILE: 'profile',
 } as const;
 

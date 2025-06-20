@@ -8,4 +8,8 @@ export const icons = {
   up: require('./arrow-up.png'),
   logo: require('./logo.png'),
   back: require('./back.png'),
+  home: require('./home.png'),
+  discover: require('./discover.png'),
+  chat: require('./chat.png'),
+  user: require('./user.png'),
 };

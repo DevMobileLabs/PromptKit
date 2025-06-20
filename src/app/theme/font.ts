@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
+
 export const fonts = {
   // font weight
   fontWeight100: '100', //thin
